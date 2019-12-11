@@ -1,0 +1,122 @@
+Day 1
+1. Create a dynamic web application for 
+1.1 index.html
+Welcome mesg
+1st Link --To invoke servlet deployed via annotation
+
+2nd Link --To invoke servlet deployed via xml tags
+
+3rd link -- Reading different types of i/ps
+(Copy input.html from today's help under WebContent)
+Write a TestInputServlet , to read request parameters sent from the client.
+ 
+
+2. Use my_sql_cmds.txt from today's help.
+Copy my_customers & dac_books table in your DB
+2.1 Create Customer POJO
+2.2 Copy DBUtils
+2.3 Create DAO i/f (ICustomerDao)
+public Customer signIn(String email,String pass) throws Exception
+
+public String signUp(Customer c) throws Exception
+
+3. Write DAO implementation class (CustomerDaoImpl)
+
+4. Test it using main(...) based tester.
+
+Day 2
+1. Solve voting assignment.(mandatory)
+refer to case study diagram.
+
+Assignement help
+1. Tables --voters(id(int) PK, email unique , password , status(boolean/varchar)
+candidates -- id (int) PK , name , political party , votes
+
+2. Create POJOs
+Voter & Candidate
+
+3. Create VotingDao i/f
+methods
+3.1 Voter authenticateVoter(String em,String pass) throws Exception
+3.2 List<Candidate> getCandidateList() throws Exception
+
+3.3 String incVotesUpdateStatus(int candidateId,int voterId) throws Exception
+
+4. In ListServlet
+List<Candidate> candidates=dao.getCandidateList();
+pw.print("<form action=status>");
+for(Candidate c  : candidates)
+ pw.print("<input type=radio name=c_id value="+c.getId()+">"+c.getName()+" "+c.getPar);
+pw.print("<input type=submit value='Vote'>");
+pw.print("</form>");
+
+Day3 
+Complete voting assignment
+
+Day 4 
+Refer to lab sequence (complete reading part also)
+
+Day5
+Create dynamic web application with the layers
+JSP--JB--DAO(DBUtils) -- POJO --DB 
+Solve minimum Voter authentication & if possible Voter registration.
+Refer to modified case study for the page flow.
+
+Day 6
+Start with Voting assignment implemented in JSP--JB--DAO--POJO layers.
+
+Day 7
+Create hibernate based Java SE application.
+
+Day 8
+1.Refer to vendor management case study.
+Copy your day7_lab to day8_lab (hibernate project)
+1.1 Create Vendor POJO
+id,name,email,password,city,phone,reg amount,reg date (LocalDate)
+Add JPA annotations.
+Add mapping entry in config file.
+
+1.2 DAO i/f (IVendorDao)
+1. String registerVendor(Vendor v)
+2. Vendor getDetails(int id);
+3. List all vendor details
+List<Vendor> getAllVendors()
+4. List all vendors from specified city after specific reg date
+List<Vendor> getSelectedVendors(String city,LocalDate dt)
+5. String updateVendorDetails(int vid,String newCity,String newPhone)
+6. Un subscribe vendor
+String deleteVendorDetails(int vid)
+
+Write Testers & test all of above.
+
+Day 9
+Create a bi directional relationship between Department & Employees.
+Department 1 <------>* Employee
+Department -- deptId(Integer),name(unique),location(string),emps
+
+Employee --empId, name,salary,Department
+
+Create a DAO layer & testers for the following
+1. Create a new department
+String createNewDeptDepartment d)
+2. Hire Emp in a dept.
+String hireEmp(int deptId,Employee e)
+3. Display employees from a specific dept.
+List<Employee> listEmps(String deptName)
+4. Fire employee from a dept
+String fireEmp(int deptId,int empId);
+
+
+Day 10
+Integrate web application with hibernate.
+(voting assignment)
+
+Day 11
+After completing the lab sequence,
+import day11.1 in your workspace. Change scope, change lazy-init & guess o/p , before running .
+
+Day 12
+MUST Create Spring MVC web application as discussed , for testing MVC flow.
+
+Day 13
+MUST create spring hibernate web application , for voter login & candidate list.
