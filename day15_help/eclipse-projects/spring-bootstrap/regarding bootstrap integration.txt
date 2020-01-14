@@ -1,0 +1,15 @@
+If you consider a spring mvc web app  configuration where all the requests are mapped to a DispatcherServlet. You can categorize those requests as requests for static and dynamic resources.
+
+The requests for dynamic resources are matched by what you program inside your controller methods, and they are routed via handler mapping , view resolver etc.
+
+The requests for static resources are the requests for .js, .css, images or some other resources that are not getting created rather already exist deployed with your application. They are not handled by the  controller methods rather by the ResourceHttpRequestHandler, simply because they have a completly different set of processing actions comparing to dynamic request (apart from path matching). You can define the location of static files for the given mapping 
+
+Reference project -- spring_mvc_hibernate_bootstrap
+
+1. Copy bootstrap(css)/jquery/.... & js under <WebContent> or  better answer --- under root of web application(webapp in maven)
+2. Check <mvc:resources> entry under spring-servlet.xml
+This entry tells spring container about the location of your static resources.
+<mvc:resources location="/" mapping="/**"/>
+	
+3. Check test_bootstrap.jsp under 
+spring_mvc_hibernate_bootstrap\WebContent\WEB-INF\views

@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+body {
+	color: blue;
+	font-size: 24px;
+	text-align: center
+}
+a {
+	display: block;
+}
+h3 {
+	color:orange;
+	font-size: 28px
+}
+form {
+    width: 300px;
+    margin:  auto;
+}
