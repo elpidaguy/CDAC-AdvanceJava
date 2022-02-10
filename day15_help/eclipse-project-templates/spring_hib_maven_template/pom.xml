@@ -8,7 +8,7 @@
   <description>Simple Spring hibernate Web Maven Template</description>
   	<properties>
 		<spring.version>4.3.9.RELEASE</spring.version>
-		<hibernate.version>5.2.6.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<jackson.version>2.5.3</jackson.version>
 	</properties>
 
