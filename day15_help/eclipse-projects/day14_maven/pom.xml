@@ -7,7 +7,7 @@
   <name>day14_maven</name>
   <description>Simple Maven Based web app</description>
   	<properties>
-		<spring.version>5.2.0.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<hibernate.version>5.2.6.Final</hibernate.version>
 		<jackson.version>2.9.8</jackson.version>
 	</properties>
